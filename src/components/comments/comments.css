@@ -1,0 +1,8 @@
+/* .commentsContainer {
+  position: relative;
+} */
+
+.replyContainer {
+  padding-left: 15px;
+  border-left: 3px solid var(--light-gray);
+}

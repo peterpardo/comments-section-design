@@ -1,0 +1,57 @@
+/* --blue: hsl(238, 40%, 52%);
+  --red: hsl(358, 79%, 66%);
+  --grayish-blue: hsl(239, 57%, 85%);
+  --pale-red: hsl(357, 100%, 86%); 
+  --dark-blue: hsl(212, 24%, 26%);
+  --gray-blue: hsl(211, 10%, 45%);
+  --light-gray: hsl(223, 19%, 93%);
+  --very-light-gray: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+} */
+
+.userReplyContainer {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.replyArea {
+  outline: none;
+  width: 100%;
+  height: 105px;
+  resize: none;
+  display: block;
+  margin-bottom: 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.replyArea:focus {
+  border-color: var(--blue);
+}
+
+.avatar {
+  width: 30px;
+  height: auto;
+}
+
+.sendBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+.sendBtn:hover {
+  background-color: var(--grayish-blue);
+}
