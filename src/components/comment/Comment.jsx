@@ -6,8 +6,8 @@ import DeleteComment from "../modal/deleteComment/DeleteComment"
 const Comment = ({ user }) => {
   const [openReply, setOpenReply] = useState(false);
   const [editComment, setEditComment] = useState(false);
-  const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [count, setCount] = useState(4);
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
   const handleCount = (action) => {
     if (action === "increment") {
@@ -16,27 +16,29 @@ const Comment = ({ user }) => {
       setCount(prev => --prev);
     }
   }
-  
+
   return (
     <>
       <section className="commentContainer">
-        <div className="cuWrapper">
-          <img src={require(`../../assets/avatars/image-${user}.png`)} alt="avatar" className="cuImage" />
-          <span className="cuName">{user}</span>
-          {user === "juliusomo" && <span className="cuTag">you</span>}
-          <span className="cuDate">1 month ago</span>
-        </div>
+        <div className="commentWrapper">
+          <div className="cuWrapper">
+            <img src={require(`../../assets/avatars/image-${user}.png`)} alt="avatar" className="cuImage" />
+            <span className="cuName">{user}</span>
+            {user === "juliusomo" && <span className="cuTag">you</span>}
+            <span className="cuDate">1 month ago</span>
+          </div>
 
-        {editComment ? (
-          <>
-            <textarea className="editArea" defaultValue="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quisquam dolorum qui saepe mollitia? Nostrum saepe dicta aliquid ad et."></textarea>
-            <div className="updateBtnContainer">
-              <button className="updateBtn">UPDATE</button>
+          {editComment ? (
+            <div className="editContainer">
+              <textarea className="editArea" defaultValue="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quisquam dolorum qui saepe mollitia? Nostrum saepe dicta aliquid ad et."></textarea>
+              <div className="updateBtnContainer">
+                <button className="updateBtn">UPDATE</button>
+              </div>
             </div>
-          </>
-        ) : (
-          <p className="commentDetails">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consequatur delectus ab praesentium error veniam assumenda voluptatum in at mollitia?</p>
-        )}
+          ) : (
+            <p className="commentDetails"><span class="mentionTag">@amyrobson</span> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, corporis. Inventore nulla libero repudiandae fuga molestiae, suscipit excepturi ipsum, dolorum, sed est atque non exercitationem voluptate natus commodi amet enim! Rem alias sunt earum voluptate architecto provident quas aliquam reprehenderit voluptates quae? Corporis enim illum nam pariatur numquam commodi!</p>
+            )}
+        </div>
 
         <div className="likeWrapper">
           <svg onClick={() => handleCount("increment")} width="11" height="11" xmlns="http://www.w3.org/2000/svg"><path d="M6.33 10.896c.137 0 .255-.05.354-.149.1-.1.149-.217.149-.354V7.004h3.315c.136 0 .254-.05.354-.149.099-.1.148-.217.148-.354V5.272a.483.483 0 0 0-.148-.354.483.483 0 0 0-.354-.149H6.833V1.4a.483.483 0 0 0-.149-.354.483.483 0 0 0-.354-.149H4.915a.483.483 0 0 0-.354.149c-.1.1-.149.217-.149.354v3.37H1.08a.483.483 0 0 0-.354.15c-.1.099-.149.217-.149.353v1.23c0 .136.05.254.149.353.1.1.217.149.354.149h3.333v3.39c0 .136.05.254.15.353.098.1.216.149.353.149H6.33Z" fill="currentColor"/></svg>
@@ -61,14 +63,13 @@ const Comment = ({ user }) => {
             <span>Reply</span>
           </button>
         )}
-       
       </section>
 
       {/* Reply Component */}
       {openReply && <Reply placeholder="Add a reply..." action="REPLY"/>}
 
       {/* Delete Modal */}
-      {openDeleteModal && <DeleteComment openDeleteModal={openDeleteModal}/>}
+      {openDeleteModal && <DeleteComment openDeleteModal={openDeleteModal} setOpenDeleteModal={setOpenDeleteModal}/>}
     </>
   )
 }

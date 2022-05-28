@@ -29,15 +29,23 @@ p {
 
 .mainContainer {
   width: 100%;
-  max-width: 375px;
-  margin: auto;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-/* @media screen and (min-width: 1440px){
-  .mainContainer {
-    max-width: 375px;
+.mainWrapper {
+  width: 100%;
+  max-width: 375px;
+  margin: auto;
+}
+
+.modalOpen {
+}
+
+@media screen and (min-width: 1440px){
+  .mainWrapper {
+    max-width: 800px;
   }
-} */
+}

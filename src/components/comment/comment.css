@@ -21,6 +21,10 @@
   margin-bottom: 15px;
 }
 
+.commentWrapper {
+  width: 100%;
+}
+
 .cuWrapper {
   display: flex;
   align-items: center;
@@ -52,6 +56,10 @@
   color: var(--gray-blue);
 }
 
+.editContainer {
+  width: 100%;
+}
+
 .editArea {
   outline: none;
   width: 100%;
@@ -81,11 +89,15 @@
   font-weight: 500;
 }
 
+.mentionTag {
+  color: var(--blue);
+  font-weight: 700;
+}
+
 .commentDetails {
   color: var(--gray-blue);
   line-height: 1.5;
-  margin-bottom: 10px;
-  vertical-align: middle;
+  margin-bottom: 15px;
 }
 
 .likeWrapper {
@@ -159,4 +171,35 @@
 
 .replyBtn:hover {
   color: var(--grayish-blue);
+}
+
+
+@media screen and (min-width: 1440px) {
+  .commentContainer {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .likeWrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 20px;
+    width: fit-content;
+    padding: 15px;
+  }
+
+  .likeWrapper svg:first-child {
+    margin-bottom: 20px;
+  }
+
+  .likeWrapper span:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  .replyBtn, .userCommentActions{
+    top: 25px;
+    bottom: auto;
+    right: 25px;
+  }
 }

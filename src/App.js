@@ -5,8 +5,10 @@ import Reply from "./components/reply/Reply";
 function App() {
   return (
     <div className="mainContainer">
-      <Comments />
-      <Reply placeholder="Add a comment..." action="SEND"/>
+      <div className="mainWrapper">
+        <Comments/>
+        <Reply placeholder="Add a comment..." action="SEND"/> 
+      </div>
     </div>
   );
 }

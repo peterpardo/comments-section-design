@@ -15,6 +15,9 @@
   border-radius: 10px;
   position: relative;
   margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 200px;
 }
 
 .replyArea {
@@ -34,7 +37,10 @@
 }
 
 .avatar {
-  width: 30px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 40px;
   height: auto;
 }
 
@@ -44,14 +50,37 @@
   right: 20px;
   padding: 10px 25px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--blue);
   color: var(--white);
   cursor: pointer;
   font-weight: 500;
 }
 
-
 .sendBtn:hover {
   background-color: var(--grayish-blue);
+}
+
+@media screen and (min-width: 1440px) {
+  .userReplyContainer {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .avatar {
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+
+  .replyArea {
+    margin: 0 20px;
+  }
+
+  .sendBtn {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
 }

@@ -1,8 +1,18 @@
 /* .commentsContainer {
-  position: relative;
+  width: 100%;
+  max-width: 375px;
+  margin: auto;
 } */
 
 .replyContainer {
   padding-left: 15px;
   border-left: 3px solid var(--light-gray);
+}
+
+@media screen and (min-width: 1440px) {
+  .replyContainer {
+    margin-left: auto;
+    width: 95%;
+    padding-left: 40px;
+  }
 }
